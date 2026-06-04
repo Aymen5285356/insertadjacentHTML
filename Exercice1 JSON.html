@@ -1,0 +1,21 @@
+<html><head><title>Exercice JSON</title>
+</head><body>
+<input type="number" id="amount" placeholder="Enter amount">
+<select id="currency"><option value="MAD">Moroccan Dirham (MAD)</option>
+    <option value="EUR">European Euro (EUR)</option>
+    <option value="USD">United States Dollar (USD)</option>
+    <option value="AED">UAE Dirham (AED)</option></select>
+<button onclick="convertMoney()">transfer</button>
+<div id="result"></div>
+
+<script>
+function convertMoney() {
+let amount = parseFloat(document.getElementById("amount").value);
+let selectedCurrency = document.getElementById("currency").value;
+return;}
+let rates = {USD: 1,EUR: 1,MAD: 10,AED: 3.5};
+let amountInUSD = amount / rates[selectedCurrency];
+let conversions = {MAD: (amountInUSD * rates.MAD).toFixed(2),EUR: (amountInUSD * rates.EUR).toFixed(2),USD: (amountInUSD * rates.USD).toFixed(2),AED: (amountInUSD * rates.AED).toFixed(2)};
+let jsonData = JSON.stringify(conversions, null, 2);
+document.getElementById("result").innerHTML ="<p>MAD: " + conversions.MAD + "</p>" +"<"<p>USD: " + conversions.USD + "</p>" +"<p>AED: " + conversions.AED + "</p>" +"<pre>" + jsonData + "</pre>";}
+</script></body></html>
