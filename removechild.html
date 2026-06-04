@@ -1,0 +1,10 @@
+<html><head>
+<title>Suppression avec remove()</title>
+</head><body><div id="p1"><p id="monElement">Texte à supprimer</p></div>
+<button onclick="supprimer()">Supprimer</button>
+<script>
+function supprimer(){
+var parent = document.getElementById("p1");
+var enfant = document.getElementById("monElement");
+parent.removeChild(enfant);}
+</script></body></html>
